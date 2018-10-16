@@ -1,0 +1,83 @@
+ext.deps = [:]
+def versions = [:]
+versions.arch_core = "2.0.0"
+versions.room = "2.0.0"
+versions.lifecycle = "2.0.0"
+versions.support = "1.0.0"
+
+versions.android_gradle_plugin = "3.2.0"
+
+def deps = [:]
+
+def support = [:]
+support.annotations = "androidx.annotation:annotation:$versions.support"
+support.app_compat = "androidx.appcompat:appcompat:$versions.support"
+support.recyclerview = "androidx.recyclerview:recycleview:$versions.support"
+support.cardview = "androidx.cardview:cardview:$versions.support"
+//support.design = "com.google.android:material:material:$versions.support"
+support.design = "com.google.android.material:material:$versions.support"
+support.v4 = "androidx.legacy:legacy-support-v4:$versions.support"
+support.core_utils = "androidx.legacy:legacy-support-core-utils:$versions.support"
+deps.support = support
+
+def room = [:]
+room.runtime = "androidx.room:room-runtime:$versions.room"
+room.compiler = "androidx.room:room-compiler:$versions.room"
+room.rxjava2 = "androdix.room:room-rxjava2:$versions.room"
+room.testing = "androidx.room:room-testing:$versions.room"
+deps.room = room
+
+
+def lifecycle = [:]
+lifecycle.runtime = "androidx.lifecycle:lifecycle-runtime:$versions.lifecycle"
+lifecycle.extensions = "androidx.lifecycle:lifecycle-extensions:$versions.lifecycle"
+//lifecycle.java8 = "androidx.lifecycle:lifecycle-common-java8:$versions.lifecycle"
+lifecycle.compiler = "androidx.lifecycle:lifecycle-compiler:$versions.lifecycle"
+deps.lifecycle = lifecycle
+
+
+def arch_core = [:]
+
+deps.arch_core = arch_core;
+
+def retrofit = [:]
+
+deps.retrofit = retrofit
+
+
+def dagger = [:]
+
+deps.dagger = dagger
+
+def espresso = [:]
+
+deps.espresso = espresso
+
+def atsl = [:]
+
+deps.atsl = atsl
+
+def mockito = [:]
+
+deps.mockito = mockito
+
+def kotlin = [:]
+
+deps.kotlin = kotlin
+
+
+def glide = [:]
+
+
+deps.android_gradle_plugin = "com.android.tools.build:gradle:$versions.android_gradle_plugin"
+
+ext.deps = deps
+
+
+def addRepos(RepositoryHandler handler) {
+    handler.google()
+    handler.jcenter()
+    handler.maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
+}
+
+ext.addRepos = this.&addRepos

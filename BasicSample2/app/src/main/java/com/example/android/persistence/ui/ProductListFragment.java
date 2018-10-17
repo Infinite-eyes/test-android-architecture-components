@@ -1,6 +1,5 @@
 package com.example.android.persistence.ui;
 
-import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +15,7 @@ import java.util.List;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.Observer;
@@ -51,7 +51,7 @@ public class ProductListFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        ProductListViewModel viewModel = ViewModelProviders.of(this).get(ProductListViewModel.class);
+        final ProductListViewModel viewModel = ViewModelProviders.of(this).get(ProductListViewModel.class);
         subscribeUi(viewModel);
     }
 

@@ -1,6 +1,5 @@
 package com.example.android.persistence.ui;
 
-import android.databinding.DataBindingUtil;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
@@ -13,6 +12,7 @@ import java.util.Objects;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -69,8 +69,6 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 
             mProductList = productList;
             result.dispatchUpdatesTo(this);
-
-
         }
     }
 

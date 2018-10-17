@@ -4,11 +4,9 @@ import android.app.Application;
 
 import com.example.android.persistence.BasicApp;
 import com.example.android.persistence.db.entity.ProductEntity;
-import com.example.android.persistence.model.Product;
 
 import java.util.List;
 
-import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MediatorLiveData;
@@ -24,7 +22,7 @@ public class ProductListViewModel extends AndroidViewModel {
     private final MediatorLiveData<List<ProductEntity>> mObservableProducts;
 
 
-    public ProductListViewModel(@NonNull Application application) {
+    public ProductListViewModel(Application application) {
         super(application);
         mObservableProducts = new MediatorLiveData<>();
         mObservableProducts.setValue(null);

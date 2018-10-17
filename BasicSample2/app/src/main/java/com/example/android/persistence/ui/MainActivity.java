@@ -1,11 +1,11 @@
 package com.example.android.persistence.ui;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 
 import com.example.android.persistence.R;
 import com.example.android.persistence.model.Product;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 /**

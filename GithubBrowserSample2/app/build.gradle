@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion build_versions.target_sdk
@@ -39,4 +40,9 @@ dependencies {
 
     androidTestImplementation deps.espresso.core
     androidTestImplementation deps.espresso.contrib
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+}
+repositories {
+    mavenCentral()
 }

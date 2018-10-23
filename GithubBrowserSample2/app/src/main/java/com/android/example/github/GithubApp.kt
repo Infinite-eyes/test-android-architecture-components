@@ -1,6 +1,7 @@
 package com.android.example.github
 
 import android.app.Application
+import timber.log.Timber
 
 /**
  * @author chenweiming
@@ -13,7 +14,7 @@ class GithubApp : Application(){
     override fun onCreate() {
         super.onCreate()
         if(BuildConfig.DEBUG){
-
+            Timber.plant(Timber.DebugTree())
         }
     }
 

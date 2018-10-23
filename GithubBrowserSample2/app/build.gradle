@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 
 
 android {
@@ -31,10 +32,19 @@ dependencies {
 
     implementation deps.support.app_compat
 
+    implementation deps.room.runtime
+    implementation deps.retrofit.runtime
+    implementation deps.retrofit.gson
+
+    implementation deps.dagger.runtime
+    implementation deps.dagger.android
+    implementation deps.dagger.android_support
     implementation deps.constraint_layout
 
+    implementation deps.timber
 
-//    kapt deps.dagger.android_support_compiler;
+    kapt deps.dagger.android_support_compiler;
+    kapt deps.room.compiler
 //    kapt deps.dagger.compile
 
 

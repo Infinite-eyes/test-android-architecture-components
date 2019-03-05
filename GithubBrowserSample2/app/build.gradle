@@ -16,8 +16,26 @@ android {
     }
 
 
+    flavorDimensions "default"
+
+    // If you need to add more flavors, consider using flavor dimensions.
+    productFlavors {
+        java {
+            dimension "default"
+        }
+         kotlin{
+            dimension "default"
+        }
+    }
+
+
     dataBinding {
         enabled = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 
     buildTypes {
@@ -32,9 +50,19 @@ dependencies {
 
     implementation deps.support.app_compat
 
+    implementation deps.support.design
+
+    implementation deps.navigation.fragment
+
     implementation deps.room.runtime
     implementation deps.retrofit.runtime
     implementation deps.retrofit.gson
+
+
+
+    implementation deps.lifecycle.runtime
+    implementation deps.lifecycle.extensions
+    implementation deps.lifecycle.java8
 
     implementation deps.dagger.runtime
     implementation deps.dagger.android
